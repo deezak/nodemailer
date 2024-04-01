@@ -1,3 +1,5 @@
 *.env
+*.env.test
 credentials.csv
+node_modules
 client_secret_690644550314-2mhmn00kadlj08cbdrmov9snrota8ftq.apps.googleusercontent.com.json
