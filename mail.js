@@ -4,26 +4,6 @@ require("dotenv").config();
  const OAuth2 = google.auth.OAuth2;
 const schedule = require('node-schedule');
 
-// const job = schedule.scheduleJob('*/10 * * * *', function(){
-//   console.log('Running task every 10 minutes');
-// });
-
-// const transporter = nodemailer.createTransport({
-//   host: "smtp.gmail.com",
-//   port: 465,
-//   secure: true,
-//   auth: {
-//     type: "OAuth2",
-//     user: "dina.m.zakaria@gmail.com",
-//   },
-// });
-//     host: 'smtp.ethereal.email',
-//     port: 587,
-//     auth: {
-//         user: 'josie60@ethereal.email',
-//         pass: 'sXx51GHHcy9eJerkCv'
-//     }
-// });
 
 const createTransporter = async () => {
   try {
