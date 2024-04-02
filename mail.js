@@ -47,8 +47,7 @@ const createTransporter = async () => {
 const sendMail = async () => {
   try {
     const mailOptions = {
-      // from: process.env.USER_EMAIL,
-      from: "dina.m.zakaria@gmail.com",
+      from: process.env.USER_EMAIL,
       to: "dina.m.zakaria@gmail.com",
       subject: "Test",
       text: "Hi, this is a test email",
