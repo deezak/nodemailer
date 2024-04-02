@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const sendmail = require('./mail');
 const app = express()
 
+app.set('trust proxy', 1);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 

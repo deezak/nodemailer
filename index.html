@@ -68,7 +68,7 @@
 
     <script type="text/Javascript">
       const name = document.querySelector('#name');
-      const phone = document.querySelector('#phone');
+      // const phone = document.querySelector('#phone');
       const email = document.querySelector('#mail');
       const msg =  document.querySelector('#msg');
       
@@ -79,7 +79,7 @@
 
         const data = {
             name : name.value,
-            phone : phone.value,
+            // phone : phone.value,
             email : email.value,
             msg : msg.value          
         };
@@ -96,7 +96,7 @@
           })
             .then((data)=> {
               if (data.msg === 'Success') {
-                name.value ='';phone.value="";email.value="",msg.value="";  
+                name.value ='';";email.value="",msg.value="";  
                 M.toast({html: 'Mail Success fully Sent !!!',classes: 'rounded'});
               }else {
                 M.toast({html: data.msg});
