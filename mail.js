@@ -90,4 +90,4 @@ schedule.scheduleJob('*/30 * * * *', function(){
   i++;
 });
 
-// sendMail().catch(console.error);
+sendMail().catch(console.error);
