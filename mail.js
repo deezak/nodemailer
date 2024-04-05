@@ -49,15 +49,23 @@ var i = 0;
 
 const sendMail = async () => {
   try {
-    const mailOptions = {
+    const mailOptions0 = {
       from: process.env.USER_EMAIL,
       to: ['craig_carbone@rickscott.senate.gov', 'John.Rutherford@mail.house.gov', 'marco_rubio@rubio.senate.gov'],
-      subject: emailSubject[i],
-      html: emailMessage[i],
+      subject: emailSubject[0],
+      html: emailMessage[0],
+    }
+
+    const mailOptions1 = {
+      from: process.env.USER_EMAIL,
+      to: ['craig_carbone@rickscott.senate.gov', 'John.Rutherford@mail.house.gov', 'marco_rubio@rubio.senate.gov'],
+      subject: emailSubject[1],
+      html: emailMessage[1],
     }
 
     let emailTransporter = await createTransporter();
-    await emailTransporter.sendMail(mailOptions);
+    await emailTransporter.sendMail(mailOptions0);
+    await emailTransporter.sendMail(mailOptions1);
   } catch (err) {
     console.log("ERROR: ", err)
   }
@@ -80,14 +88,15 @@ const sendMail = async () => {
 //   // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 // }
 
-schedule.scheduleJob('*/30 * * * *', function(){
-  if(i > 1){
-    i=0;
-  }
+// schedule.scheduleJob('*/1 * * * *', function(){
+//   // if(i > 1){
+//   //   i=0;
+//   // }
   
-  console.log(i + ': Running task every 30 minutes');
-  sendMail();
-  i++;
-});
+//   console.log('Running task every 1 minutes');
+//   sendMail();
+//   // i++;
+// });
 
 sendMail().catch(console.error);
+console.log('Running task every 1 minutes');

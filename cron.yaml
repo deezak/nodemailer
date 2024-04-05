@@ -1,0 +1,4 @@
+cron:
+- description: "daily summary job"
+  url: https://pressureemails.ue.r.appspot.com/
+  schedule: every 1 minutes
