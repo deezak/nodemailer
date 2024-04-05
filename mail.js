@@ -51,7 +51,7 @@ const sendMail = async () => {
   try {
     const mailOptions = {
       from: process.env.USER_EMAIL,
-      to: ['dina.m.zakaria@gmail.com','craig_carbone@rickscott.senate.gov', 'John.Rutherford@mail.house.gov', 'marco_rubio@rubio.senate.gov'],
+      to: ['craig_carbone@rickscott.senate.gov', 'John.Rutherford@mail.house.gov', 'marco_rubio@rubio.senate.gov'],
       subject: emailSubject[i],
       html: emailMessage[i],
     }
