@@ -1,4 +1,4 @@
 cron:
 - description: "daily email job"
   url: "/"
-  schedule: every 30 minutes
+  schedule: every 1 minutes
