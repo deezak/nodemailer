@@ -118,4 +118,4 @@ async function getLogCount() {
 
 sendMail().catch(console.error);
 getLogCount().catch(console.error);
-console.log('Running task ' + "and total emails sent: "+ logCount);
+console.log("Running task and total emails sent: "+ logCount);
