@@ -1,4 +1,4 @@
 cron:
-- description: "daily summary job"
-  url: "https://pressureemails.ue.r.appspot.com/"
-  schedule: every 1 minutes
+- description: "daily email job"
+  url: "/"
+  schedule: every 30 minutes

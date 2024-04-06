@@ -71,6 +71,24 @@ const sendMail = async () => {
   }
 };
 
+const { Logging } = require('@google-cloud/logging');
+
+async function getLogCount() {
+  const logging = new Logging();
+  const options = {
+    resourceNames: [`projects/${process.env.PROJECT_ID}`],
+    filter: `resource.type="gae_app" AND resource.labels.module_id="default" AND logName="projects/${process.env.PROJECT_ID}/logs/stdout" "Running task"`,
+  };
+
+  const [logs] = await logging.getEntries(options);
+  const logCount = logs.length;
+  console.log('Number of logs matching the query:', logCount);
+  return logCount;
+}
+
+
+
+
 
 // async..await is not allowed in global scope, must use a wrapper
 // async function main() {
@@ -99,4 +117,5 @@ const sendMail = async () => {
 // });
 
 sendMail().catch(console.error);
-console.log('Running task every 1 minutes');
+getLogCount().catch(console.error);
+console.log('Running task ' + "and total emails sent: "+ logCount);

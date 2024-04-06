@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const sendmail = require('./mail');
-const app = express()
+const app = express();
 
 app.set('trust proxy', 1);
 app.use(bodyParser.json());
